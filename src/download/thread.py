@@ -870,11 +870,11 @@ class DownloadThread(threading.Thread):
                         break
                     time.sleep(0.01)
                     
-                save_filename = base64.b64encode(self.url.encode('ascii')).decode('ascii').replace("/", "")
+                save_filename = base64.b64encode(self.url.encode('ascii')).decode('ascii').replace("/", "")[-20:]
                 download_file_name = base64.b64encode(resume_data).decode("ascii")
 
             elif self.mode == "video":
-                save_filename = base64.b64encode(self.url.encode('ascii')).decode('ascii').replace("/", "")
+                save_filename = base64.b64encode(self.url.encode('ascii')).decode('ascii').replace("/", "")[-20:]
                 download_file_name = self.downloadname
 
             state = {

@@ -55,38 +55,8 @@ varia_sources = [
   'gtk-kde.css',
 ]
 
-varia_sources_window = [
-  'window/content.py',
-  'window/sidebar.py',
-  'window/preferences.py',
-  'window/scheduler.py',
-  'window/updater.py',
-  'window/drag_and_drop.py',
-  'window/window_management.py',
-  'window/about.py',
-]
-
-varia_sources_download = [
-  'download/actionrow.py',
-  'download/thread.py',
-  'download/communicate.py',
-  'download/listen.py',
-  'download/scheduler.py',
-  'download/videos.py',
-  'download/details.py',
-  'download/manage_downloads.py',
-  'download/aria2_instance.py',
-  'download/torrent_select_files.py',
-]
-
-varia_sources_tray = [
-  'tray/start_tray_process.py',
-  'tray/tray_linux_appindicator.py',
-  'tray/tray_win_mac.py',
-  'tray/trayicon_win.png',
-]
-
 install_data(varia_sources, install_dir: moduledir)
-install_data(varia_sources_window, install_dir: moduledir_window)
-install_data(varia_sources_download, install_dir: moduledir_download)
-install_data(varia_sources_tray, install_dir: moduledir_tray)
+
+install_subdir('window', install_dir: moduledir)
+install_subdir('tray', install_dir: moduledir)
+install_subdir('download', install_dir: moduledir)
